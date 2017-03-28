@@ -47,12 +47,12 @@ module.exports = {
   comparePassword: function(password,user, callback){
   	bcrypt.compare(password, user.encryptedPassword,function(err, isMatched){
   		if(err){
-  			cb(err);
+  			callback(err);
   		}
   		if(isMatched){
-  			cb(null, true)
+  			callback(null, true)
   		} else {
-  			cb(err);
+  			callback(err);
   		}
   	})
   }

@@ -7,8 +7,11 @@
 module.exports = {
 
 	index: function(req, res){
-		var email = req.params.email;
-		var password = req.params.password;
+		var email = req.param('email');
+		var password = req.param('password');
+
+		console.log("Email :" + email)
+		console.log("Password :" + password)
 
 		if(!email || !password){
 			return res.json("Email and Password are required !!")
